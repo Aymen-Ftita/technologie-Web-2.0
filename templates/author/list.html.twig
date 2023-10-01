@@ -21,7 +21,7 @@
         <td>{{author.username|upper}}</td>
         <td>{{author.email}}</td>
         <td>{{author.nb_books}}</td>
-        <td ><a href={{path('/auhtorDetails',{'id':author.id})}}>detail</a></td>
+        <td ><a href={#{{path('/auhtorDetails',{'id':author.id})}}#}>detail</a></td>
     </tr>
     {% endfor%}
     
