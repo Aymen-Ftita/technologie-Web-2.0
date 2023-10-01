@@ -1,0 +1,38 @@
+<h1>Page Authors's list !<h1/>
+    {% if authors is empty%}
+    <h1>No Authors here</h1>
+    {% else %}
+    <table style="border:solid 1px" >
+        <tr style="border:solid 1px">
+            <td>ID</td>
+            <td>Picture</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Normbre des livres</td>
+        </tr>
+    
+    
+    
+    {% for author in authors %}
+    
+    <tr>
+        <td>{{author.id}}</td>
+        <td><img src="{{author.picture}}" width=40px /></td>
+        <td>{{author.username|upper}}</td>
+        <td>{{author.email}}</td>
+        <td>{{author.nb_books}}</td>
+        <td ><a href={{path('/auhtorDetails',{'id':author.id})}}>detail</a></td>
+    </tr>
+    {% endfor%}
+    
+    </table>
+    {% endif %}
+
+
+    {% set sa=0  %}
+    {% set sb=0  %}
+
+    {% for i in authors%} {%set sa= sa+1 %}{%set sb= sb+i.nb_books %} {% endfor%}
+
+    <h1>Nombre des auteurs : {{sa}}</h1>
+    <h1>Nombre total des livres : {{sb}}  </h1>

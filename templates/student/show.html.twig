@@ -1,0 +1,31 @@
+<h1>Page show works !<h1/>
+{% if tt is empty%}
+<h1>No Students here</h1>
+{% else %}
+<table>
+    <tr>
+        <td>ID</td>
+        <td>name</td>
+        <td>nb classe</td>
+    </tr>
+
+
+
+{% for s in tt %}
+
+<tr>
+    <td>{{s.id}}</td>
+    <td>{{s.name|upper}}</td>
+    <td>{{s.nb_classe}}</td>
+</tr>
+{% endfor%}
+
+</table>
+{% endif %}
+
+{%set name ='test'%}
+
+<a href={{path('app_student',{'name':name})}}>Vers la page d'acceuil</a>
+
+<img src="/image.png" >
+{#this is a comment#}
